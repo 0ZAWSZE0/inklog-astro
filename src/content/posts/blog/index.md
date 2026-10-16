@@ -49,3 +49,12 @@ pnpm create fuwari@latest
 ```sh title="运行项目"
 pnpm dev
 ```
+
+## 三、编译项目
+
+```sh title="编译项目"
+pnpm build
+```
+根目录生成dist文件夹
+
+## 四、部署到GitHub Pages
