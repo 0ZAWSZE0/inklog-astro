@@ -58,3 +58,76 @@ pnpm build
 根目录生成dist文件夹
 
 ## 四、部署到GitHub Pages
+1. 创建.github/workflows/deploy.yml
+
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build with Astro
+        run: pnpm astro build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+2. 登录github打开对应仓库
+- Setting->Pages->Build and deployment->soure选择Github Actions
+![GitHub设置](./img_1.png)
+
+3. 提交并推送代码自动部署页面
+
+## 五、新建文章
+```sh
+pnpm new-post <filename>
+```
+- 文件会新建到`src/content/posts`目录下
+- 语法参考markdown语法
+
