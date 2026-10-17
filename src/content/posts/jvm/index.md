@@ -18,7 +18,7 @@ JVM，也就是 Java 虚拟机，它是 Java 实现跨平台的基石。
 
 程序运行时，JVM 会对字节码文件进行逐行解释，翻译成机器码指令，并交给对应的操作系统去执行。
 
-![三分恶面渣逆袭：Java语言编译运行](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-1.png)
+![三分恶面渣逆袭：Java语言编译运行](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img.png)
 
 这样就实现了 Java 一次编译，处处运行的特性。
 
@@ -43,11 +43,11 @@ JVM 的执行引擎会将这些字节码翻译成机器码，有两种方式：
 
 ②、JVM 包含一个即时编译器 JIT，它可以在运行时将热点代码缓存到 codeCache 中，下次执行的时候不用再一行一行的解释，而是直接执行缓存后的机器码，执行效率会大幅提高。
 
-![截图来自美团技术：JIT](https://cdn.paicoding.com/tobebetterjavaer/images/jvm/jit-9a62fc02-1a6a-451e-bb2b-19fc086d5be0.png)
+![截图来自美团技术：JIT](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_1.png)
 
 ③、任何可以通过 Java 编译的语言，比如说 Groovy、Kotlin、Scala 等，都可以在 JVM 上运行。
 
-![三分恶面渣逆袭：JVM跨语言](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-2.png)
+![三分恶面渣逆袭：JVM跨语言](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_2.png)
 
 #### 为什么要学习 JVM？
 
@@ -70,7 +70,7 @@ JVM 的执行引擎会将这些字节码翻译成机器码，有两种方式：
 
 JVM 大致可以划分为三个部分：类加载器、运行时数据区和执行引擎。
 
-![截图来源于网络：jvm 的结构](https://cdn.paicoding.com/stutymore/what-is-jvm-20231030185742.png)
+![截图来源于网络：jvm 的结构](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_3.png)
 
 ① 类加载器，负责从文件系统、网络或其他来源加载 Class 文件，将 Class 文件中的二进制数据读入到内存当中。
 
@@ -88,7 +88,7 @@ JVM 本质上就是一个进程。当我们执行 `java -jar application.jar` �
 
 现在，一个话剧团想在这个剧院里演一场就在河南。话剧团就向剧院管理员说："我需要租用你的舞台、灯光、音响，从下午 2 点到 5 点。"剧院管理员就给他们分配了一个舞台和相关资源。
 
-![jvm vs os](https://cdn.paicoding.com/stutymore/jvm-20251106124728.png)
+![jvm vs os](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_4.png)
 
 操作系统是底层，它直接控制硬件资源，比如 CPU、内存、磁盘、网络等。操作系统的工作就是把这些硬件资源分配给各个应用程序使用。
 
@@ -117,7 +117,7 @@ JVM 是运行在操作系统上的一个应用程序。JVM 本身是一个进程
 
 按照 Java 虚拟机规范，JVM 的内存区域可以细分为`程序计数器`、`虚拟机栈`、`本地方法栈`、`堆`和`方法区`。
 
-![三分恶面渣逆袭：Java虚拟机运行时数据区](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-3.png)
+![三分恶面渣逆袭：Java虚拟机运行时数据区](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_5.png)
 
 其中`方法区`和`堆`是线程共享的，`虚拟机栈`、`本地方法栈`和`程序计数器`是线程私有的。
 
@@ -131,7 +131,7 @@ Java 虚拟机栈的生命周期与线程相同。
 
 当线程执行一个方法时，会创建一个对应的[栈帧](https://javabetter.cn/jvm/stack-frame.html)，用于存储局部变量表、操作数栈、动态链接、方法出口等信息，然后栈帧会被压入虚拟机栈中。当方法执行完毕后，栈帧会从虚拟机栈中移除。
 
-![三分恶面渣逆袭：Java虚拟机栈](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-4.png)
+![三分恶面渣逆袭：Java虚拟机栈](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_6.png)
 
 #### 一个什么都没有的空方法，空的参数都没有，那局部变量表里有没有变量？
 
@@ -157,13 +157,13 @@ public class VarDemo1 {
 
 用 `javap -v VarDemo1` 命令查看编译后的字节码，就可以在 emptyMethod 中看到这样的内容：
 
-![二哥的 Java 进阶之路：javap emptyMethod](https://cdn.paicoding.com/stutymore/jvm-20240816130451.png)
+![二哥的 Java 进阶之路：javap emptyMethod](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_7.png)
 
 这里的 `locals=1` 表示局部变量表有一个变量，即 this，Slot 0 位置存储了 this 引用。
 
 而在静态方法 staticEmptyMethod 中，你会看到这样的内容：
 
-![二哥的 Java 进阶之路：javap staticEmptyMethod](https://cdn.paicoding.com/stutymore/jvm-20240816130536.png)
+![二哥的 Java 进阶之路：javap staticEmptyMethod](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_8.png)
 
 这里的 locals=0 表示局部变量表为空，因为静态方法属于类级别方法，不需要 this 引用，也就没有局部变量。
 
@@ -183,11 +183,11 @@ public class VarDemo1 {
 
 比如说获取系统时间的 `System.currentTimeMillis()` 方法就是调用本地方法，来获取操作系统当前时间的。
 
-![二哥的Java 进阶之路：currentTimeMillis方法源码](https://cdn.paicoding.com/stutymore/jvm-20241020075744.png)
+![二哥的Java 进阶之路：currentTimeMillis方法源码](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_9.png)
 
 再比如 JVM 自身的一些底层功能也需要通过本地方法来实现。像 Object 类中的 `hashCode()` 方法、`clone()` 方法等。
 
-![二哥的Java 进阶之路：hashCode方法源码](https://cdn.paicoding.com/stutymore/jvm-20241020080126.png)
+![二哥的Java 进阶之路：hashCode方法源码](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_10.png)
 
 #### native 方法解释一下？
 
@@ -199,13 +199,13 @@ native 方法是在 Java 中通过 [native 关键字](https://javabetter.cn/basi
 
 堆是 JVM 中最大的一块内存区域，被所有线程共享，在 JVM 启动时创建，主要用来存储 new 出来的对象。
 
-![二哥的 Java 进阶之路：堆](https://cdn.paicoding.com/stutymore/neicun-jiegou-20231225154450.png)
+![二哥的 Java 进阶之路：堆](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_11.png)
 
 Java 中“几乎”所有的对象都会在堆中分配，堆也是[垃圾收集器](https://javabetter.cn/jvm/gc-collector.html)管理的目标区域。
 
 从内存回收的角度来看，由于垃圾收集器大部分都是基于分代收集理论设计的，所以堆又被细分为`新生代`、`老年代`、`Eden空间`、`From Survivor空间`、`To Survivor空间`等。
 
-![三分恶面渣逆袭：Java 堆内存结构](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-5.png)
+![三分恶面渣逆袭：Java 堆内存结构](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_12.png)
 
 随着 [JIT 编译器](https://javabetter.cn/jvm/jit.html)的发展和逃逸技术的逐渐成熟，“所有的对象都会分配到堆上”就不再那么绝对了。
 
@@ -262,15 +262,15 @@ public class StaticVarDemo {
 
 JDK 1.6 使用永久代来实现方法区：
 
-![三分恶面渣逆袭：JDK 1.6内存区域](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-6.png)
+![三分恶面渣逆袭：JDK 1.6内存区域](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_13.png)
 
 JDK 1.7 时仍然是永久带，但发生了一些细微变化，比如将字符串常量池、静态变量存放到了堆上。
 
-![三分恶面渣逆袭：JDK 1.7内存区域](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-7.png)
+![三分恶面渣逆袭：JDK 1.7内存区域](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_14.png)
 
 在 JDK 1.8 时，直接在内存中划出了一块区域，叫**元空间**，来取代之前放在 JVM 内存中的永久代，并将运行时常量池、类常量池都移动到了元空间。
 
-![三分恶面渣逆袭：JDK 1.8内存区域](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-8.png)
+![三分恶面渣逆袭：JDK 1.8内存区域](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_15.png)
 
 ### 5.为什么使用元空间替代永久代？
 
@@ -296,7 +296,7 @@ JDK 8 就终于完成了这项移出工作，这样的好处就是，元空间�
 
 当我们使用 new 关键字创建一个对象时，JVM 首先会检查 new 指令的参数是否能在常量池中定位到类的符号引用，然后检查这个符号引用代表的类是否已被加载、解析和初始化。如果没有，就先执行类加载。
 
-![二哥的 Java 进阶之路：对象的创建过程](https://cdn.paicoding.com/stutymore/jvm-20240404091445.png)
+![二哥的 Java 进阶之路：对象的创建过程](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_16.png)
 
 如果已经加载，JVM 会为对象分配内存完成初始化，比如数值类型的成员变量初始值是 0，布尔类型是 false，对象类型是 null。
 
@@ -312,7 +312,7 @@ JDK 8 就终于完成了这项移出工作，这样的好处就是，元空间�
 
 可以通过 `java -XX:+PrintCommandLineFlags -version` 和 `java -XX:+PrintGCDetails -version` 命令查看 JVM 的 GC 收集器。
 
-![二哥的 Java 进阶之路：JVM 使用的垃圾收集器](https://cdn.paicoding.com/stutymore/jvm-20250110111618.png)
+![二哥的 Java 进阶之路：JVM 使用的垃圾收集器](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_17.png)
 
 可以看到，我本机安装的 JDK 8 默认使用的是 `Parallel Scavenge + Parallel Old`。
 
@@ -334,7 +334,7 @@ G1||	 	-XX:+UseG1GC
 
 在堆中为对象分配内存时，主要使用两种策略：指针碰撞和空闲列表。
 
-![三分恶面渣逆袭：指针碰撞和空闲列表](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-10.png)
+![三分恶面渣逆袭：指针碰撞和空闲列表](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_18.png)
 
 指针碰撞适用于管理简单、碎片化较少的内存区域，如年轻代；而空闲列表适用于内存碎片化较严重或对象大小差异较大的场景如老年代。
 
@@ -358,7 +358,7 @@ JVM 维护一个列表，记录堆中所有未占用的内存块，每个内存�
 
 会。
 
-![Baeldung：堆抢占](https://cdn.paicoding.com/stutymore/jvm-20250111104638.png)
+![Baeldung：堆抢占](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_19.png)
 
 new 对象时，指针会向右移动一个对象大小的距离，假如一个线程 A 正在给字符串对象 s 分配内存，另外一个线程 B 同时为 ArrayList 对象 l 分配内存，两个线程就发生了抢占。
 
@@ -366,7 +366,7 @@ new 对象时，指针会向右移动一个对象大小的距离，假如一个�
 
 为了解决堆内存分配的竞争问题，JVM 为每个线程保留了一小块内存空间，被称为 TLAB，也就是线程本地分配缓冲区，用于存放该线程分配的对象。
 
-![Baeldung：TLAB](https://cdn.paicoding.com/stutymore/jvm-20250111105119.png)
+![Baeldung：TLAB](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_20.png)
 
 当线程需要分配对象时，直接从 TLAB 中分配。只有当 TLAB 用尽或对象太大需要直接在堆中分配时，才会使用全局分配指针。
 
@@ -374,7 +374,7 @@ new 对象时，指针会向右移动一个对象大小的距离，假如一个�
 
 可以通过 `java -XX:+PrintFlagsFinal -version | grep TLAB` 命令查看当前 JVM 是否开启了 TLAB。
 
-![二哥的 Java 进阶之路：查看 TLAB](https://cdn.paicoding.com/stutymore/jvm-20250111111537.png)
+![二哥的 Java 进阶之路：查看 TLAB](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_21.png)
 
 如果开启了 TLAB，会看到类似以下的输出，其中 bool UseTLAB 的值为 true。
 
@@ -398,7 +398,7 @@ class TLABDemo {
 
 在 VM 参数中添加 `-XX:+UseTLAB -XX:+PrintTLAB -XX:+PrintGCDetails -XX:+PrintGCDateStamps`，运行后可以看到这样的内容：
 
-![二哥的 Java 进阶之路：测试 TLAB](https://cdn.paicoding.com/stutymore/jvm-20250111111823.png)
+![二哥的 Java 进阶之路：测试 TLAB](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_22.png)
 
 - waste：未使用的 TLAB 空间。
 - alloc：分配到 TLAB 的空间。
@@ -408,7 +408,7 @@ class TLABDemo {
 
 当使用 `-XX:-UseTLAB -XX:+PrintGCDetails` 关闭 TLAB 时，会看到类似以下的输出：
 
-![二哥的 Java 进阶之路：关闭 TLAB](https://cdn.paicoding.com/stutymore/jvm-20250111112843.png)
+![二哥的 Java 进阶之路：关闭 TLAB](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_23.png)
 
 直接出现了两次 GC，因为没有 TLAB，Eden 区更快被填满，导致年轻代 GC。年轻代 GC 频繁触发，一部分长生命周期对象被晋升到老年代，间接导致老年代 GC 触发。
 
@@ -420,7 +420,7 @@ class TLABDemo {
 
 就拿我们常用的 HotSpot 来说吧。对象在内存中包括三部分：对象头、实例数据和对齐填充。
 
-![三分恶面渣逆袭：对象的存储布局](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-12.png)
+![三分恶面渣逆袭：对象的存储布局](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_24.png)
 
 #### 说说对象头的作用？
 
@@ -438,7 +438,7 @@ Mark Word 存储了对象的运行时状态信息，包括锁、哈希值、GC �
 
 可以通过 `java -XX:+PrintFlagsFinal -version | grep UseCompressedOops` 命令来查看 JVM 是否开启了压缩指针。
 
-![二哥的 Java 进阶之路：查看 JVM 是否开启压缩指针](https://cdn.paicoding.com/stutymore/jvm-20240320220408.png)
+![二哥的 Java 进阶之路：查看 JVM 是否开启压缩指针](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_25.png)
 
 如果压缩指针开启，输出结果中的 bool UseCompressedOops 值为 true。
 
@@ -469,13 +469,13 @@ JVM 会对这些数据进行对齐/重排，以提高内存访问速度。
 
 因为 CPU 进行内存访问时，一次寻址的指针大小是 8 字节，正好是 L1 缓存行的大小。如果不进行内存对齐，则可能出现跨缓存行访问，导致额外的缓存行加载，CPU 的访问效率就会降低。
 
-![rickiyang：缓存行污染](https://cdn.paicoding.com/stutymore/jvm-20240320222058.png)
+![rickiyang：缓存行污染](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_26.png)
 
 比如说上图中 obj1 占 6 个字节，由于没有对齐，导致这一行缓存中多了 2 个字节 obj2 的数据，当 CPU 访问 obj2 的时候，就会导致缓存行刷新。
 
 也就说，8 字节对齐，是为了效率的提高，以空间换时间的一种方案。
 
-![rickiyang：000 结尾](https://cdn.paicoding.com/stutymore/jvm-20240320222631.png)
+![rickiyang：000 结尾](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_27.png)
 
 #### new Object() 对象的内存大小是多少？
 
@@ -483,7 +483,7 @@ JVM 会对这些数据进行对齐/重排，以提高内存访问速度。
 
 一般来说，目前的操作系统都是 64 位的，并且 JDK 8 中的压缩指针是默认开启的，因此在 64 位的 JVM 上，`new Object()`的大小是 16 字节（12 字节的对象头 + 4 字节的对齐填充）。
 
-![rickiyang：Java 对象模型](https://cdn.paicoding.com/stutymore/jvm-20240320221330.png)
+![rickiyang：Java 对象模型](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_28.png)
 
 对象头的大小是固定的，在 32 位 JVM 上是 8 字节，在 64 位 JVM 上是 16 字节；如果开启了压缩指针，就是 12 字节。
 
@@ -537,7 +537,7 @@ public class JOLSample {
 
 第三步，运行代码，查看输出结果：
 
-![二哥的 Java 进阶之路：JOL 运行结果](https://cdn.paicoding.com/stutymore/jvm-20240320223653.png)
+![二哥的 Java 进阶之路：JOL 运行结果](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_29.png)
 
 可以看到有 OFFSET、SIZE、TYPE DESCRIPTION、VALUE 这几个信息。
 
@@ -554,7 +554,7 @@ public class JOLSample {
 
 在 64 位 JVM 上，未开启压缩指针时，对象引用占用 8 字节；开启压缩指针时，对象引用会被压缩到 4 字节。HotSpot 虚拟机默认是开启压缩指针的。
 
-![dijia478：对象头](https://cdn.paicoding.com/stutymore/jvm-20240320224701.png)
+![dijia478：对象头](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_30.png)
 
 我们来验证一下：
 
@@ -573,7 +573,7 @@ class ReferenceSizeExample {
 
 运行代码，查看输出结果：
 
-![二哥的 Java 进阶之路：对象的引用有多大？](https://cdn.paicoding.com/stutymore/jvm-20240320231059.png)
+![二哥的 Java 进阶之路：对象的引用有多大？](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_31.png)
 
 ReferenceHolder.reference 的大小为 4 字节。
 
@@ -589,13 +589,13 @@ ReferenceHolder.reference 的大小为 4 字节。
 
 优点是，对象被移动时只需要修改句柄表中的指针，而不需要修改对象引用本身。
 
-![三分恶面渣逆袭：通过句柄访问对象](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-13.png)
+![三分恶面渣逆袭：通过句柄访问对象](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_32.png)
 
 在直接指针访问中，引用直接存储对象的内存地址；对象的实例数据和类型信息都存储在堆中固定的内存区域。
 
 优点是访问速度更快，因为少了一次句柄的寻址操作。缺点是如果对象在内存中移动，引用需要更新为新的地址。
 
-![三分恶面渣逆袭：通过直接指针访问对象](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-14.png)
+![三分恶面渣逆袭：通过直接指针访问对象](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_33.png)
 
 HotSpot 虚拟机主要使用直接指针来进行对象访问。
 
@@ -603,7 +603,7 @@ HotSpot 虚拟机主要使用直接指针来进行对象访问。
 
 四种，分别是强引用、软引用、弱引用和虚引用。
 
-![三分恶面渣逆袭：四种引用总结](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-19.png)
+![三分恶面渣逆袭：四种引用总结](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_34.png)
 
 强引用是 Java 中最常见的引用类型。使用 new 关键字赋值的引用就是强引用，只要强引用关联着对象，垃圾收集器就不会回收这部分对象，即使内存不足。
 
@@ -649,7 +649,7 @@ PhantomReference<String> phantomRef = new PhantomReference<>(new String("沉默�
 
 了解。Java 堆被划分为**新生代**和**老年代**两个区域。
 
-![三分恶面渣逆袭：Java堆内存划分](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-21.png)
+![三分恶面渣逆袭：Java堆内存划分](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_35.png)
 
 新生代又被划分为 Eden 空间和两个 Survivor 空间（From 和 To）。
 
@@ -666,13 +666,13 @@ PhantomReference<String> phantomRef = new PhantomReference<>(new String("沉默�
 
 基于这种算法，虚拟机将内存分为一块较大的 Eden 空间和两块较小的 Survivor 空间，每次分配内存只使用 Eden 和其中一块 Survivor。发生垃圾收集时，将 Eden 和 Survivor 中仍然存活的对象一次性复制到另外一块 Survivor 空间上，然后直接清理掉 Eden 和已用过的那块 Survivor 空间。默认 Eden 和 Survivor 的大小比例是 8∶1。
 
-![三分恶面渣逆袭：新生代内存划分](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-25.png)
+![三分恶面渣逆袭：新生代内存划分](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_36.png)
 
 ### 14.🌟对象什么时候会进入老年代？
 
 对象通常会在年轻代中分配，随着时间的推移和垃圾收集的进程，某些满足条件的对象会进入到老年代中，如长期存活的对象。
 
-![二哥的 Java 进阶之路：对象进入老年代](https://cdn.paicoding.com/stutymore/jvm-20240501093929.png)
+![二哥的 Java 进阶之路：对象进入老年代](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_37.png)
 
 #### 长期存活的对象如何判断？
 
@@ -682,7 +682,7 @@ JVM 会为对象维护一个“年龄”计数器，记录对象在新生代中�
 
 可以通过 `jinfo -flag MaxTenuringThreshold $(jps | grep -i nacos | awk '{print $1}')` 来查看当前 JVM 的年龄阈值。
 
-![二哥的 Java 进阶之路：年龄阈值](https://cdn.paicoding.com/stutymore/jvm-20250113095435.png)
+![二哥的 Java 进阶之路：年龄阈值](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_38.png)
 
 1. 如果应用中的对象存活时间较短，可以适当调大这个值，让对象在新生代多待一会儿
 2. 如果对象存活时间较长，可以适当调小这个值，让对象更快进入老年代，减少在新生代的复制次数
@@ -699,17 +699,17 @@ String str = new String(new char[1000000]);
 
 其大小由 JVM 参数 `-XX:PretenureSizeThreshold` 控制，但在 JDK 8 中，默认值为 0，也就是说默认情况下，对象仅根据 GC 存活的次数来判断是否进入老年代。
 
-![二哥的 Java 进阶之路：PretenureSizeThreshold](https://cdn.paicoding.com/stutymore/jvm-20250113102243.png)
+![二哥的 Java 进阶之路：PretenureSizeThreshold](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_39.png)
 
 G1 垃圾收集器中，大对象会直接分配到 HUMONGOUS 区域。当对象大小超过一个 Region 容量的 50% 时，会被认为是大对象。
 
-![有梦想的肥宅：G1](https://cdn.paicoding.com/stutymore/gc-collector-20231228213824.png)
+![有梦想的肥宅：G1](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_40.png)
 
 Region 的大小可以通过 JVM 参数 `-XX:G1HeapRegionSize` 来设置，默认情况下从 1MB 到 32MB 不等，会根据堆内存大小动态调整。
 
 可以通过 `java -XX:+UseG1GC -XX:+PrintGCDetails -version` 查看 G1 垃圾收集器的相关信息。
 
-![二哥的 Java 进阶之路：UseG1GC](https://cdn.paicoding.com/stutymore/jvm-20250113103255.png)
+![二哥的 Java 进阶之路：UseG1GC](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_41.png)
 
 从结果上来看，我本机上 G1 的堆大小为 2GB，Region 的大小为 4MB。
 
@@ -746,11 +746,11 @@ JVM 会使用一个名为安全点（Safe Point）的机制来确保线程能够
 
 用个通俗的比喻，老王去拉车，车上的东西很重，老王累的汗流浃背，但是老王不能在上坡或者下坡时休息，只能在平地上停下来擦擦汗，喝口水。
 
-![三分恶面渣逆袭：老王拉车只能在平路休息](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-33.png)
+![三分恶面渣逆袭：老王拉车只能在平路休息](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_42.png)
 
 推荐大家看看这个[HotSpot JVM Deep Dive - Safepoint](https://www.youtube.com/watch?v=JkbWPPNc4SI)，对 safe point 有一个比较深入地解释。
 
-![](https://cdn.paicoding.com/stutymore/jvm-20250114142714.png)
+![](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_43.png)
 
 ### 16.对象一定分配在堆中吗？
 
@@ -779,7 +779,7 @@ public void testStackAllocation() {
 
 可以通过 `java -XX:+PrintFlagsFinal -version | grep DoEscapeAnalysis` 来确认 JVM 是否开启了逃逸分析。
 
-![二哥的 Java 进阶之路：JVM 开启了逃逸分析](https://cdn.paicoding.com/stutymore/jvm-20250115162625.png)
+![二哥的 Java 进阶之路：JVM 开启了逃逸分析](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_44.png)
 
 #### 逃逸具体是指什么？
 
@@ -795,7 +795,7 @@ public Person createPerson() {
 
 比如说 `new Person()` 创建的对象被返回，那么这个对象就逃逸出当前方法了。
 
-![三分恶面渣逆袭：方法逃逸](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-37.png)
+![三分恶面渣逆袭：方法逃逸](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_45.png)
 
 再比如说，对象被另外一个线程引用，生命周期超出了当前线程，那么对象就必须分配在堆中，并且线程之间需要同步。
 
@@ -866,7 +866,7 @@ class MemoryLeakExample {
 
 用一个比较有味道的比喻来形容就是，内存溢出是排队去蹲坑，发现没坑了；内存泄漏，就是有人占着茅坑不拉屎，导致坑位不够用。
 
-![三分恶面渣逆袭：内存泄漏、内存溢出](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-15.png)
+![三分恶面渣逆袭：内存泄漏、内存溢出](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_46.png)
 
 > 1. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的京东面经同学 1 Java 技术一面面试原题：说说 OOM 的原因
 > 2. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的快手面经同学 1 部门主站技术部面试原题：了解 OOM 吗？
@@ -904,11 +904,11 @@ class HeapSpaceErrorGenerator {
 
 也可以通过 VM 参数设置堆内存大小为 `-Xmx128M`，然后运行程序，出现的内存溢出的时间会更快。
 
-![二哥的 Java 进阶之路：添加 -Xmx128M VM 参数](https://cdn.paicoding.com/stutymore/neicun-jiegou-20231225160028.png)
+![二哥的 Java 进阶之路：添加 -Xmx128M VM 参数](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_47.png)
 
 可以看到，堆内存溢出发生在 11 个对象后。
 
-![二哥的 Java 进阶之路：堆内存溢出](https://cdn.paicoding.com/stutymore/neicun-jiegou-20231225160115.png)
+![二哥的 Java 进阶之路：堆内存溢出](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_48.png)
 
 > 1. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的京东面经同学 1 Java 技术一面面试原题：说说 OOM 的原因
 > 2. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的快手面经同学 1 部门主站技术部面试原题：Java 哪些内存区域会发生 OOM？为什么？
@@ -986,39 +986,39 @@ threadLocal.set(new Object()); // 未清理
 
 第一步，使用 `jps -l` 查看运行的 Java 进程 ID。
 
-![二哥的 Java 进阶之路：jps 查看技术派的进程 ID](https://cdn.paicoding.com/stutymore/jvm-20240806085955.png)
+![二哥的 Java 进阶之路：jps 查看技术派的进程 ID](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_49.png)
 
 第二步，使用`top -p [pid]` 查看进程使用 CPU 和内存占用情况。
 
-![二哥的 Java 进阶之路：top -p](https://cdn.paicoding.com/stutymore/jvm-20240806090059.png)
+![二哥的 Java 进阶之路：top -p](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_50.png)
 
 第三步，使用 `top -Hp [pid]` 查看进程下的所有线程占用 CPU 和内存情况。
 
-![二哥的 Java 进阶之路：top -Hp](https://cdn.paicoding.com/stutymore/jvm-20240806090208.png)
+![二哥的 Java 进阶之路：top -Hp](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_51.png)
 
 第四步，抓取线程栈：`jstack -F 29452 > 29452.txt`，可以多抓几次做个对比。
 
 > 29452 为 pid，顺带作为文件名。
 
-![二哥的 Java 进阶之路：jstack](https://cdn.paicoding.com/stutymore/jvm-20240806091529.png)
+![二哥的 Java 进阶之路：jstack](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_52.png)
 
 看看有没有线程死锁、死循环或长时间等待这些问题。
 
-![二哥的 Java 进阶之路：另外一组线程 id 的堆栈](https://cdn.paicoding.com/stutymore/jvm-20240806092007.png)
+![二哥的 Java 进阶之路：另外一组线程 id 的堆栈](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_53.png)
 
 第五步，可以使用`jstat -gcutil [pid] 5000 10` 每隔 5 秒输出 GC 信息，输出 10 次，查看 **YGC** 和 **Full GC** 次数。
 
-![二哥的 Java 进阶之路：jstat](https://cdn.paicoding.com/stutymore/jvm-20240806093011.png)
+![二哥的 Java 进阶之路：jstat](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_54.png)
 
 通常会出现 YGC 不增加或增加缓慢，而 Full GC 增加很快。
 
 或使用 `jstat -gccause [pid] 5000` 输出 GC 摘要信息。
 
-![二哥的 Java 进阶之路：jstat](https://cdn.paicoding.com/stutymore/jvm-20240806093107.png)
+![二哥的 Java 进阶之路：jstat](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_55.png)
 
 或使用 `jmap -heap [pid]` 查看堆的摘要信息，关注老年代内存使用是否达到阀值，若达到阀值就会执行 Full GC。
 
-![二哥的 Java 进阶之路：jmap](https://cdn.paicoding.com/stutymore/jvm-20240806093153.png)
+![二哥的 Java 进阶之路：jmap](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_56.png)
 
 如果发现 `Full GC` 次数太多，就很大概率存在内存泄漏了。
 
@@ -1026,11 +1026,11 @@ threadLocal.set(new Object()); // 未清理
 
 执行命令 `jmap -dump:format=b,file=heap.hprof 10025` 会输出进程 10025 的堆快照信息，保存到文件 heap.hprof 中。
 
-![二哥的 Java 进阶之路：jmap](https://cdn.paicoding.com/stutymore/console-tools-20240106184317.png)
+![二哥的 Java 进阶之路：jmap](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_57.png)
 
 第七步，使用图形化工具分析，如 JDK 自带的 **VisualVM**，从菜单 > 文件 > 装入 dump 文件。
 
-![VisualVM](https://cdn.paicoding.com/stutymore/view-tools-20240107134238.png)
+![VisualVM](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_58.png)
 
 然后在结果观察内存占用最多的对象，找到内存泄漏的源头。
 
@@ -1074,7 +1074,7 @@ jmap -dump:format=b,file=heap.hprof <pid>
 
 栈溢出的本质是因为线程的栈空间不足，导致无法再为新的栈帧分配内存。
 
-![二哥的Java进阶之路：栈帧](https://cdn.paicoding.com/stutymore/stack-frame-20231224090450.png)
+![二哥的Java进阶之路：栈帧](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_59.png)
 
 当一个方法被调用时，JVM 会在栈中分配一个栈帧，用于存储该方法的执行信息。如果方法调用嵌套太深，栈帧不断压入栈中，最终会导致栈空间耗尽，抛出 StackOverflowError。
 
@@ -1123,7 +1123,7 @@ public class LargeLocalVariables {
 
 JVM 在做 GC 之前，会先搞清楚什么是垃圾，什么不是垃圾，通常会通过可达性分析算法来判断对象是否存活。
 
-![二哥的 Java 进阶之路：可达性分析](https://cdn.paicoding.com/stutymore/gc-20231227104036.png)
+![二哥的 Java 进阶之路：可达性分析](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_60.png)
 
 在确定了哪些垃圾可以被回收后，垃圾收集器（如 CMS、G1、ZGC）要做的事情就是进行垃圾回收，可以采用标记清除算法、复制算法、标记整理算法、分代收集算法等。
 
@@ -1141,13 +1141,13 @@ java -XX:+UseConcMarkSweepGC \
 
 Java 的垃圾回收过程主要分为标记存活对象、清除无用对象、以及内存压缩/整理三个阶段。不同的垃圾回收器在执行这些步骤时会采用不同的策略和算法。
 
-![IT 宅：垃圾回收的过程](https://cdn.paicoding.com/stutymore/jvm-20250922170756.png)
+![IT 宅：垃圾回收的过程](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_61.png)
 
 #### 哪些阶段会触发 STW？
 
 STW 是 JVM 为了垃圾回收而暂停所有用户线程的机制。
 
-![STW](https://cdn.paicoding.com/stutymore/jvm-20250922172410.png)
+![STW](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_62.png)
 
 总结一下：在标记阶段，STW 是必需的。无论是哪种垃圾回收算法，标记阶段都需要准确找出所有存活对象。如果标记的时候业务线程还在运行，就会标记不准确。因为业务线程可能会在 GC 标记某个对象为垃圾的同时，访问这个对象。为了避免这种冲突，标记阶段必须暂停所有业务线程。
 
@@ -1227,7 +1227,7 @@ Java 通过可达性分析算法来判断一个对象是否还存活。
 
 通过一组名为 “GC Roots” 的根对象，进行递归扫描，无法从根对象到达的对象就是“垃圾”，可以被回收。
 
-![三分恶面渣逆袭：GC Root](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-18.png)
+![三分恶面渣逆袭：GC Root](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_63.png)
 
 这也是 G1、CMS 等主流垃圾收集器使用的主要算法。
 
@@ -1235,7 +1235,7 @@ Java 通过可达性分析算法来判断一个对象是否还存活。
 
 每个对象有一个引用计数器，记录引用它的次数。当计数器为零时，对象可以被回收。
 
-![三分恶面渣逆袭：引用计数法](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-17.png)
+![三分恶面渣逆袭：引用计数法](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_64.png)
 
 引用计数法无法解决循环引用的问题。例如，两个对象互相引用，但不再被其他对象引用，它们的引用计数都不为零，因此不会被回收。
 
@@ -1263,7 +1263,7 @@ Java 通过可达性分析算法来判断一个对象是否还存活。
 - 类静态变量
 - 运行时常量池中的常量（String 或 Class 类型）
 
-![二哥的 java 进阶之路：GC Roots](https://cdn.paicoding.com/stutymore/neicun-jiegou-20231227111238.png)
+![二哥的 java 进阶之路：GC Roots](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_65.png)
 
 #### 说说虚拟机栈中的引用？
 
@@ -1294,7 +1294,7 @@ Java 通过 JNI 提供了一种机制，允许 Java 代码调用本地代码（�
 
 当调用 Java 方法时，虚拟机会创建一个栈帧并压入虚拟机栈，而当它调用本地方法时，虚拟机会通过动态链接直接调用指定的本地方法。
 
-![pecuyu：动态链接](https://cdn.paicoding.com/stutymore/gc-20240321085719.png)
+![pecuyu：动态链接](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_66.png)
 
 JNI 引用是在 Java 本地接口代码中创建的引用，这些引用可以指向 Java 堆中的对象。
 
@@ -1364,7 +1364,7 @@ class ConstantPoolReference {
 
 垃圾回收就是古代的秋后问斩，`finalize()` 就是刀下留人，在人犯被处决之前，还要做最后一次审计，青天大老爷会看看有没有什么冤情，需不需要刀下留人。
 
-![三分恶面渣逆袭：刀下留人](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-20.png)
+![三分恶面渣逆袭：刀下留人](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_67.png)
 
 如果对象在进行可达性分析后发现没有与 GC Roots 相连接的引用链，那它将会被第一次标记，随后进行一次筛选。
 
@@ -1385,7 +1385,7 @@ class ConstantPoolReference {
 - **标记**：标记所有需要回收的对象
 - **清除**：回收所有被标记的对象
 
-![三分恶面渣逆袭：标记-清除算法](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-22.png)
+![三分恶面渣逆袭：标记-清除算法](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_68.png)
 
 优点是实现简单，缺点是回收过程中会产生内存碎片。
 
@@ -1393,7 +1393,7 @@ class ConstantPoolReference {
 
 `标记-复制`算法可以解决标记-清除算法的内存碎片问题，因为它将内存空间划分为两块，每次只使用其中一块。当这一块的内存用完了，就将还存活着的对象复制到另外一块上面，然后清理掉这一块。
 
-![三分恶面渣逆袭：标记-复制算法](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-23.png)
+![三分恶面渣逆袭：标记-复制算法](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_69.png)
 
 缺点是浪费了一半的内存空间。
 
@@ -1401,7 +1401,7 @@ class ConstantPoolReference {
 
 `标记-整理`算法是标记-清除复制算法的升级版，它不再划分内存空间，而是将存活的对象向内存的一端移动，然后清理边界以外的内存。
 
-![标记-整理算法](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-24.png)
+![标记-整理算法](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_70.png)
 
 缺点是移动对象的成本比较高。
 
@@ -1409,7 +1409,7 @@ class ConstantPoolReference {
 
 `分代收集`算法是目前主流的垃圾收集算法，它根据对象存活周期的不同将内存划分为几块，一般分为新生代和老年代。
 
-![二哥的 Java 进阶之路：Java 堆划分](https://cdn.paicoding.com/stutymore/gc-20231227131241.png)
+![二哥的 Java 进阶之路：Java 堆划分](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_71.png)
 
 新生代用复制算法，因为大部分对象生命周期短。老年代用标记-整理算法，因为对象存活率较高。
 
@@ -1437,7 +1437,7 @@ class ConstantPoolReference {
 
 Minor GC 也称为 Young GC，是指发生在年轻代的垃圾收集。年轻代包含 Eden 区以及两个 Survivor 区。
 
-![二哥的 Java 进阶之路：Java 堆划分](https://cdn.paicoding.com/stutymore/gc-20231227131241.png)
+![二哥的 Java 进阶之路：Java 堆划分](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_71.png)
 
 Major GC 也称为 Old GC，主要指的是发生在老年代的垃圾收集。是 CMS 的特有行为。
 
@@ -1480,7 +1480,7 @@ Full GC 会从 GC Root 出发，标记所有可达对象。新生代使用复制
 
 JVM 的垃圾收集器主要分为两大类：分代收集器和分区收集器，分代收集器的代表是 CMS，分区收集器的代表是 G1 和 ZGC。
 
-![三分恶面渣逆袭：HotSpot虚拟机垃圾收集器](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-28.png)
+![三分恶面渣逆袭：HotSpot虚拟机垃圾收集器](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_72.png)
 
 CMS 是第一个关注 GC 停顿时间的垃圾收集器，JDK 1.5 时引入，JDK9 被标记弃用，JDK14 被移除。
 
@@ -1496,7 +1496,7 @@ Serial 收集器是最基础、历史最悠久的收集器。
 
 Serial/Serial Old 收集器的运行过程如图：
 
-![三分恶面渣逆袭：Serial/Serial Old收集器运行示意图](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-29.png)
+![三分恶面渣逆袭：Serial/Serial Old收集器运行示意图](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_73.png)
 
 #### 说说 ParNew 收集器？
 
@@ -1504,13 +1504,13 @@ ParNew 收集器实质上是 Serial 收集器的多线程并行版本，使用�
 
 ParNew/Serial Old 收集器运行示意图如下：
 
-![三分恶面渣逆袭：ParNew/Serial Old收集器运行示意图](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-30.png)
+![三分恶面渣逆袭：ParNew/Serial Old收集器运行示意图](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_74.png)
 
 #### 说说 Parallel Scavenge 收集器？
 
 Parallel Scavenge 收集器是一款新生代收集器，基于标记-复制算法实现，也能够并行收集。和 ParNew 有些类似，但 Parallel Scavenge 主要关注的是垃圾收集的吞吐量——所谓吞吐量，就是 CPU 用于运行用户代码的时间和总消耗时间的比值，比值越大，说明垃圾收集的占比越小。
 
-![三分恶面渣逆袭：吞吐量](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-31.png)
+![三分恶面渣逆袭：吞吐量](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_75.png)
 
 根据对象存活周期的不同会将内存划分为几块，一般是把 Java 堆分为新生代和老年代，这样就可以根据各个年代的特点采用最适当的收集算法。
 
@@ -1522,7 +1522,7 @@ Serial Old 是 Serial 收集器的老年代版本，它同样是一个单线程�
 
 Parallel Old 是 Parallel Scavenge 收集器的老年代版本，基于标记-整理算法实现，使用多条 GC 线程在 STW 期间同时进行垃圾回收。
 
-![三分恶面渣逆袭：Parallel Old收集器](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-32.png)
+![三分恶面渣逆袭：Parallel Old收集器](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_76.png)
 
 #### 说说 CMS 收集器？
 
@@ -1530,7 +1530,7 @@ CMS 在 JDK 1.5 时引入，JDK 9 时被标记弃用，JDK 14 时被移除。
 
 CMS 是一种低延迟的垃圾收集器，采用标记-清除算法，分为初始标记、并发标记、重新标记和并发清除四个阶段，优点是垃圾回收线程和应用线程同时运行，停顿时间短，适合延迟敏感的应用，但容易产生内存碎片，可能触发 Full GC。
 
-![小潘：CMS](https://cdn.paicoding.com/stutymore/gc-collector-20231228211056.png)
+![小潘：CMS](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_77.png)
 
 #### 说说 G1 收集器？
 
@@ -1538,7 +1538,7 @@ G1 在 JDK 1.7 时引入，在 JDK 9 时取代 CMS 成为默认的垃圾收集�
 
 G1 是一种面向大内存、高吞吐场景的垃圾收集器，它将堆划分为多个小的 Region，通过标记-整理算法，避免了内存碎片问题。优点是停顿时间可控，适合大堆场景，但调优较复杂。
 
-![有梦想的肥宅：G1](https://cdn.paicoding.com/stutymore/gc-collector-20231228213824.png)
+![有梦想的肥宅：G1](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_40.png)
 
 #### 说说 ZGC 收集器？
 
@@ -1546,7 +1546,7 @@ ZGC 是 JDK 11 时引入的一款低延迟的垃圾收集器，最大特点是�
 
 它通过并发标记和重定位来避免大部分 Stop-The-World 停顿，主要依赖指针染色来管理对象状态。
 
-![得物技术：指针染色](https://cdn.paicoding.com/stutymore/gc-collector-20240102142908.png)
+![得物技术：指针染色](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_78.png)
 
 - **标记对象的可达性**：通过在指针上增加标记位，不需要额外的标记位即可判断对象的存活状态。
 - **重定位状态**：在对象被移动时，可以通过指针染色来更新对象的引用，而不需要等待全局同步。
@@ -1569,7 +1569,7 @@ ZGC 是 JDK 11 时引入的一款低延迟的垃圾收集器，最大特点是�
 
 ### 32.🌟能详细说一下 CMS 的垃圾收集过程吗？
 
-![三分恶面渣逆袭：Concurrent Mark Sweep收集器运行示意图](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-34.png)
+![三分恶面渣逆袭：Concurrent Mark Sweep收集器运行示意图](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_79.png)
 
 CMS 使用**标记-清除**算法进行垃圾收集，分 4 大步：
 
@@ -1590,7 +1590,7 @@ CMS 使用**标记-清除**算法进行垃圾收集，分 4 大步：
 
 #### 什么是三色标记法？
 
-![Java全栈架构师：三色标记法](https://cdn.paicoding.com/stutymore/jvm-20240816132235.png)
+![Java全栈架构师：三色标记法](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_80.png)
 
 三色标记法用于标记对象的存活状态，它将对象分为三类：
 
@@ -1621,7 +1621,7 @@ CMS 使用**标记-清除**算法进行垃圾收集，分 4 大步：
 
 G1 在 JDK 1.7 时引入，在 JDK 9 时取代 CMS 成为默认的垃圾收集器。
 
-![有梦想的肥宅：G1 收集器](https://cdn.paicoding.com/stutymore/gc-collector-20231228213824.png)
+![有梦想的肥宅：G1 收集器](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_40.png)
 
 G1 把 Java 堆划分为多个大小相等的独立区域 Region，每个区域都可以扮演新生代或老年代的角色。
 
@@ -1641,7 +1641,7 @@ G1 收集器的运行过程大致可划分为这几个步骤：
 
 ③、**可预测的停顿**，G1 在垃圾回收期间仍然需要「Stop the World」。不过，G1 在停顿时间上添加了预测机制，用户可以 JVM 启动时指定期望停顿时间，G1 会尽可能地在这个时间内完成垃圾回收。
 
-![三分恶面渣逆袭：G1收集器运行示意图](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-36.png)
+![三分恶面渣逆袭：G1收集器运行示意图](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_81.png)
 
 #### 计算Region的时候怎么和业务代码并行执行
 
@@ -1720,7 +1720,7 @@ G1 非常适合大内存、多核处理器的环境。
 java -XX:+PrintCommandLineFlags -version
 ```
 
-![二哥的 Java 进阶之路：JDK 默认垃圾收集器](https://cdn.paicoding.com/stutymore/jvm-20240613111454.png)
+![二哥的 Java 进阶之路：JDK 默认垃圾收集器](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_82.png)
 
 `UseParallelGC` = `Parallel Scavenge + Parallel Old`，表示新生代用`Parallel Scavenge`收集器，老年代使用`Parallel Old` 收集器。
 
@@ -1770,15 +1770,15 @@ JDK 自带的命令行工具层面，我用过 jps、jstat、jinfo、jmap、jhat
 
 ①、我一般会使用 `jmap -heap <pid>` 查看堆内存摘要，包括新生代、老年代、元空间等。
 
-![二哥的Java 进阶之路：jmap -heap](https://cdn.paicoding.com/stutymore/jvm-20240806093153.png)
+![二哥的Java 进阶之路：jmap -heap](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_56.png)
 
 ②、或者使用 `jmap -histo <pid>` 查看对象分布。
 
-![二哥的Java 进阶之路：jmap -histo](https://cdn.paicoding.com/stutymore/console-tools-20240106185906.png)
+![二哥的Java 进阶之路：jmap -histo](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_83.png)
 
 ③、还有生成堆转储文件：`jmap -dump:format=b,file=<path> <pid>`。
 
-![二哥的Java 进阶之路：jmap -dump](https://cdn.paicoding.com/stutymore/console-tools-20240106184317.png)
+![二哥的Java 进阶之路：jmap -dump](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_57.png)
 
 
 > 1. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的哔哩哔哩同学 1 二面面试原题：你是如何使用jmap，你用过哪些命令？
@@ -1790,15 +1790,15 @@ JDK 自带的命令行工具层面，我用过 jps、jstat、jinfo、jmap、jhat
 
 ①、JConsole：JDK 自带的监控工具，可以用来监视 Java 应用程序的运行状态，包括内存使用、线程状态、类加载、GC 等。
 
-![三分恶面渣逆袭：JConsole概览](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-39.png)
+![三分恶面渣逆袭：JConsole概览](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_84.png)
 
 ②、VisualVM：一个基于 NetBeans 的可视化工具，在很长一段时间内，VisualVM 都是 Oracle 官方主推的故障处理工具。集成了多个 JDK 命令行工具的功能，非常友好。
 
-![三分恶面渣逆袭：VisualVM安装插件](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-40.png)
+![三分恶面渣逆袭：VisualVM安装插件](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_85.png)
 
 ③、Java Mission Control：JMC 最初是 JRockit VM 中的诊断工具，但在 Oracle JDK7 Update 40 以后，就绑定到了 HotSpot VM 中。不过后来又被 Oracle 开源出来作为了一个单独的产品。
 
-![三分恶面渣逆袭：JMC主要界面](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-41.png)
+![三分恶面渣逆袭：JMC主要界面](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_86.png)
 
 #### 用过哪些第三方的工具？
 
@@ -1855,7 +1855,7 @@ JDK 自带的命令行工具层面，我用过 jps、jstat、jinfo、jmap、jhat
 
 JVM 调优是一个复杂的过程，调优的对象包括堆内存、垃圾收集器和 JVM 运行时参数等。
 
-![二哥的 Java 进阶之路：JVM 调优](https://cdn.paicoding.com/stutymore/jvm-20240417094311.png)
+![二哥的 Java 进阶之路：JVM 调优](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_87.png)
 
 如果堆内存设置过小，可能会导致频繁的垃圾回收。所以在[技术派实战项目](https://javabetter.cn/zhishixingqiu/paicoding.html)中，启动 JVM 的时候配置了 `-Xms` 和 `-Xmx` 参数，让堆内存最大可用内存为 2G（我用的丐版服务器）。
 
@@ -1873,7 +1873,7 @@ JVM 调优是一个复杂的过程，调优的对象包括堆内存、垃圾收�
 
 接着在 jstack 的输出中搜索这个十六进制的线程 ID，找到对应的堆栈信息。最后，根据堆栈信息定位到具体的业务方法，查看是否有死循环、频繁的垃圾回收、资源竞争导致的上下文频繁切换等问题。
 
-![三分恶面渣逆袭：CPU飙高](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-43.png)
+![三分恶面渣逆袭：CPU飙高](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_88.png)
 
 首先，使用 top 命令查看 CPU 占用情况，找到占用 CPU 较高的进程 ID。
 
@@ -1881,7 +1881,7 @@ JVM 调优是一个复杂的过程，调优的对象包括堆内存、垃圾收�
 top
 ```
 
-![haikuotiankongdong：top 命令结果](https://cdn.paicoding.com/stutymore/jvm-20240527111502.png)
+![haikuotiankongdong：top 命令结果](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_89.png)
 
 接着，使用 jstack 命令查看对应进程的线程堆栈信息。
 
@@ -1897,7 +1897,7 @@ jstack -l <pid> > thread-dump.txt
 top -H -p <pid>
 ```
 
-![haikuotiankongdong：Java 进程中的线程情况](https://cdn.paicoding.com/stutymore/jvm-20240527111356.png)
+![haikuotiankongdong：Java 进程中的线程情况](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_90.png)
 
 >注意，top 命令显示的线程 ID 是十进制的，而 jstack 输出的是十六进制的，所以需要将线程 ID 转换为十六进制。
 
@@ -1922,7 +1922,7 @@ printf "%x\n" PID
 
 如果有 Skywalking 这种工具，可以看调用链路的详细耗时分布，定位是哪个环节慢了。
 
-![PmHub：Skywalking](https://cdn.paicoding.com/stutymore/jvm-20250925190010.png)
+![PmHub：Skywalking](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_91.png)
 
 数据库层面要检查慢查询日志，看是不是某些 SQL 执行时间过长。可能是缺少索引、查询条件不合适、或者锁等待。我会用 EXPLAIN 分析 SQL 的执行计划，看是否需要优化。
 
@@ -1942,11 +1942,11 @@ printf "%x\n" PID
 
 第二步，通过 jmap 命令 dump 出堆内存信息。
 
-![二哥的 Java 进阶之路：dump](https://cdn.paicoding.com/stutymore/console-tools-20240106184317.png)
+![二哥的 Java 进阶之路：dump](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_57.png)
 
 第三步，使用可视化工具分析 dump 文件，比如说 VisualVM，找到占用内存高的对象，再找到创建该对象的业务代码位置，从代码和业务场景中定位具体问题。
 
-![二哥的 Java 进阶之路：分析](https://cdn.paicoding.com/stutymore/view-tools-20240107134238.png)
+![二哥的 Java 进阶之路：分析](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_58.png)
 
 > 1. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的联想面经同学 7 面试原题：怎么定位线上的内存问题。
 
@@ -2026,7 +2026,7 @@ jmap -dump:format=b,file=heap pid
 
 JVM 的操作对象是 Class 文件，JVM 把 Class 文件中描述类的数据结构加载到内存中，并对数据进行校验、解析和初始化，最终转化成可以被 JVM 直接使用的类型，这个过程被称为类加载机制。
 
-![darrenqiao：类加载器](https://cdn.paicoding.com/stutymore/jvm-20250924160643.png)
+![darrenqiao：类加载器](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_92.png)
 
 其中最重要的三个概念就是：类加载器、类加载过程和双亲委派模型。
 
@@ -2038,7 +2038,7 @@ JVM 的操作对象是 Class 文件，JVM 把 Class 文件中描述类的数据�
 
 类从被加载到 JVM 开始，到卸载出内存，整个生命周期分为七个阶段，分别是载入、验证、准备、解析、初始化、使用和卸载。其中验证、准备和解析这三个阶段统称为连接。
 
-![类加载过程](https://cdn.paicoding.com/stutymore/class-load-20231031202641.png)
+![类加载过程](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_93.png)
 
 除去使用和卸载，就是 Java 的类加载过程。这 5 个阶段一般是顺序发生的，但在动态绑定的情况下，解析阶段发生在初始化阶段之后。
 
@@ -2065,20 +2065,20 @@ JVM 的操作对象是 Class 文件，JVM 把 Class 文件中描述类的数据�
 
 类加载由类加载器来执行，JVM 有三个重要的类加载器：启动类加载器、扩展类加载器、应用类加载器。它们遵循双亲委派机制。
 
-![程序新视界：类加载器](https://cdn.paicoding.com/stutymore/jvm-20251106114027.png)
+![程序新视界：类加载器](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_94.png)
 
 #### 类加载器是个什么东西？
 
 类加载器是 JVM 内部的一个组件。当 JVM 启动时，会在内存里创建几个类加载器实例，这些类加载器的作用就是根据类名去找到对应的 .class 文件，读取字节码内容，然后交给 JVM 进行解析和初始化。
 
-![JVM 和类加载器的关系](https://cdn.paicoding.com/stutymore/jvm-20251106114437.png)
+![JVM 和类加载器的关系](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_95.png)
 
 
 ### 47.能说一下类的生命周期吗？
 
 一个类从被加载到虚拟机内存中开始，到从内存中卸载，整个生命周期需要经过七个阶段：加载 、验证、准备、解析、初始化、使用和卸载。
 
-![三分恶面渣逆袭：类的生命周期](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-44.png)
+![三分恶面渣逆袭：类的生命周期](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_96.png)
 
 ### 48.🌟类装载的过程知道吗？
 
@@ -2104,7 +2104,7 @@ JVM 的操作对象是 Class 文件，JVM 把 Class 文件中描述类的数据�
 
 #### 载入过程 JVM 会做什么？
 
-![三分恶面渣逆袭：载入](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-45.png)
+![三分恶面渣逆袭：载入](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_97.png)
 
 - 1）通过一个类的全限定名来获取定义此类的二进制字节流。
 - 2）将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构。
@@ -2119,7 +2119,7 @@ JVM 的操作对象是 Class 文件，JVM 把 Class 文件中描述类的数据�
 
 双亲委派模型要求类加载器在加载类时，先委托父加载器尝试加载，只有父加载器无法加载时，子加载器才会加载。
 
-![三分恶面渣逆袭：双亲委派模型](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-46.png)
+![三分恶面渣逆袭：双亲委派模型](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_98.png)
 
 这个过程会一直向上递归，也就是说，从子加载器到父加载器，再到更上层的加载器，一直到最顶层的启动类加载器。
 
@@ -2153,7 +2153,7 @@ JVM 的操作对象是 Class 文件，JVM 把 Class 文件中描述类的数据�
 - 第一种：SPI 机制加载 JDBC 驱动。
 - 第二种：热部署框架。
 
-![三分恶面渣逆袭：双亲委派模型的三次破坏](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-47.png)
+![三分恶面渣逆袭：双亲委派模型的三次破坏](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_99.png)
 
 #### 说说SPI 机制？
 
@@ -2189,7 +2189,7 @@ Tomcat 基于双亲委派模型进行了一些扩展，主要的类加载器有�
 - Shared ClassLoader：加载共享类库，允许多个 Web 应用共享某些类库；
 - WebApp ClassLoader：加载 Web 应用程序的类库，支持多应用隔离和优先加载应用自定义的类库（破坏了双亲委派模型）。
 
-![Tomcat类加载器](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/jvm-48.png)
+![Tomcat类加载器](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_100.png)
 
 
 
@@ -2327,7 +2327,7 @@ Java 一般被称为“解释型语言”，因为 Java 代码在执行前，需
 
 因此，Java 的执行效率得到了大幅提升。
 
-![图片来源于美团技术博客](https://cdn.paicoding.com/tobebetterjavaer/images/jvm/jit-9a62fc02-1a6a-451e-bb2b-19fc086d5be0.png)
+![图片来源于美团技术博客](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/jvm/img_1.png)
 
 > 1. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的腾讯 Java 后端实习一面原题：说说 Java 解释执行的流程。
 
