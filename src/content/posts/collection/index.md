@@ -15,7 +15,7 @@ draft: false
 - 推荐阅读：[二哥的 Java 进阶之路：Java 集合框架](https://javabetter.cn/collection/gailan.html)
 - 推荐阅读：[阻塞队列 BlockingQueue](https://javabetter.cn/thread/BlockingQueue.html)。
 
-![二哥的 Java 进阶之路：Java集合主要关系](https://cdn.paicoding.com/tobebetterjavaer/images/collection/gailan-01.png)
+![二哥的 Java 进阶之路：Java集合主要关系](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img.png)
 
 集合框架可以分为两条大的支线：
 
@@ -51,15 +51,15 @@ Java 中的队列主要通过 Queue 接口和并发包下的 BlockingQueue 两�
 
 优先级队列 PriorityQueue 是一个无界队列，它的元素按照自然顺序排序或者 Comparator 比较器进行排序。
 
-![李豪：优先级队列](https://cdn.paicoding.com/tobebetterjavaer/images/collection/PriorityQueue-8dca2f55-a7c7-49e1-95a5-df1a34f2aef5.png)
+![李豪：优先级队列](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_1.png)
 
 双端队列 ArrayDeque 是一个基于数组的，可以在两端插入和删除元素的队列。
 
-![李豪：双端队列](https://cdn.paicoding.com/tobebetterjavaer/images/collection/arraydeque-1e7086a3-3d31-4553-aa16-5eaf2193649e.png)
+![李豪：双端队列](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_2.png)
 
 LinkedList 实现了 Queue 接口的子类 Deque，所以也可以当做双端队列来使用。
 
-![二哥的 Java 进阶之路](https://cdn.paicoding.com/tobebetterjavaer/images/collection/list-war-2-02.png)
+![二哥的 Java 进阶之路](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_3.png)
 
 #### 用过哪些集合类，它们的优劣？
 
@@ -77,11 +77,11 @@ LinkedList 实现了 Queue 接口的子类 Deque，所以也可以当做双端�
 
 队列是一种先进先出（FIFO, First-In-First-Out）的数据结构，第一个加入队列的元素会成为第一个被移除的元素，适用于需要按顺序处理任务的场景，比如消息队列、任务调度等。
 
-![疯狂的技术宅：队列](https://cdn.paicoding.com/stutymore/collection-20240412224341.png)
+![疯狂的技术宅：队列](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_4.png)
 
 栈是一种后进先出（LIFO, Last-In-First-Out）的数据结构，最后一个加入栈的元素会成为第一个被移除的元素，适用于需要回溯的场景，比如函数调用栈、浏览器历史记录等。
 
-![Wang Wei：栈](https://cdn.paicoding.com/stutymore/collection-20240412224549.png)
+![Wang Wei：栈](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_5.png)
 
 #### 哪些是线程安全的容器？
 
@@ -91,7 +91,7 @@ LinkedList 实现了 Queue 接口的子类 Deque，所以也可以当做双端�
 
 Collection 继承了 Iterable 接口，这意味着所有实现 Collection 接口的类都必须实现 `iterator()` 方法，之后就可以使用增强型 for 循环遍历集合中的元素了。
 
-![二哥的 Java 进阶之路：Collection源码](https://cdn.paicoding.com/stutymore/collection-20240711092853.png)
+![二哥的 Java 进阶之路：Collection源码](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_6.png)
 
 > 1. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的用友金融一面原题：你了解哪些集合框架？
 > 2. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的华为一面原题：说下 Java 容器和 HashMap
@@ -117,7 +117,7 @@ Collection 继承了 Iterable 接口，这意味着所有实现 Collection 接�
 
 ArrayList 是基于数组实现的，LinkedList 是基于链表实现的。
 
-![三分恶面渣逆袭：ArrayList和LinkedList的数据结构](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-2.png)
+![三分恶面渣逆袭：ArrayList和LinkedList的数据结构](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_7.png)
 
 #### ArrayList 和 LinkedList 的用途有什么不同？
 
@@ -131,30 +131,30 @@ ArrayList 是基于数组实现的，LinkedList 是基于链表实现的。
 
 但如果插入的是中间的位置，就需要把插入位置后的元素向前或者向后移动，甚至还有可能触发扩容，效率就会低很多，变成 O(n)。
 
-![三分恶面渣逆袭：ArrayList和LinkedList中间插入](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-3.png)
+![三分恶面渣逆袭：ArrayList和LinkedList中间插入](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_8.png)
 
 LinkedList 因为是链表结构，插入和删除只需要改变前置节点、后置节点和插入节点的引用，因此不需要移动元素。
 
 如果是在链表的头部插入或者删除，时间复杂度是 O(1)；如果是在链表的中间插入或者删除，时间复杂度是 O(n)，因为需要遍历链表找到插入位置；如果是在链表的尾部插入或者删除，时间复杂度是 O(1)。
 
 
-![三分恶面渣逆袭：ArrayList和LinkedList中间删除](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-4.png)
+![三分恶面渣逆袭：ArrayList和LinkedList中间删除](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_9.png)
 
 #### ArrayList 和 LinkedList 是否支持随机访问？
 
 ①、ArrayList 是基于数组的，也实现了 RandomAccess 接口，所以它支持随机访问，可以通过下标直接获取元素。
 
-![二哥的 Java 进阶之路：ArrayList](https://cdn.paicoding.com/stutymore/collection-20240319092907.png)
+![二哥的 Java 进阶之路：ArrayList](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_10.png)
 
 ②、LinkedList 是基于链表的，所以它没法根据下标直接获取元素，不支持随机访问。
 
-![二哥的 Java 进阶之路：LinkedList](https://cdn.paicoding.com/stutymore/collection-20240319093038.png)
+![二哥的 Java 进阶之路：LinkedList](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_11.png)
 
 #### ArrayList 和 LinkedList 内存占用有何不同？
 
 ArrayList 是基于数组的，是一块连续的内存空间，所以它的内存占用是比较紧凑的；但如果涉及到扩容，就会重新分配内存，空间是原来的 1.5 倍。
 
-![二哥的 Java 进阶之路：ArrayList的扩容](https://cdn.paicoding.com/stutymore/collection-20240319093453.png)
+![二哥的 Java 进阶之路：ArrayList的扩容](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_12.png)
 
 LinkedList 是基于链表的，每个节点都有一个指向下一个节点和上一个节点的引用，于是每个节点占用的内存空间比 ArrayList 稍微大一点。
 
@@ -177,7 +177,7 @@ LinkedList 适用于：
 - 数组在内存中占用的是一块连续的存储空间，因此我们可以通过数组下标快速访问任意元素。数组在创建时必须指定大小，一旦分配内存，数组的大小就固定了。
 - 链表的元素存储在于内存中的任意位置，每个节点通过指针指向下一个节点。
 
-![数组和链表的内存占用区别](https://cdn.paicoding.com/stutymore/collection-20241011102136.png)
+![数组和链表的内存占用区别](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_13.png)
 
 > 1. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的京东同学 10 后端实习一面的原题：ArrayList 和 LinkedList 的时间复杂度
 > 2. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的小米暑期实习同学 E 一面面试原题：你了解哪些集合？
@@ -190,7 +190,7 @@ LinkedList 适用于：
 
 了解。当往 ArrayList 中添加元素时，会先检查是否需要扩容，如果当前容量+1 超过数组长度，就会进行扩容。
 
-![三分恶面渣逆袭：ArrayList扩容](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-5.png)
+![三分恶面渣逆袭：ArrayList扩容](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_14.png)
 
 扩容后的新数组长度是原来的 1.5 倍，然后再把原数组的值拷贝到新数组中。
 
@@ -217,7 +217,7 @@ private void grow(int minCapacity) {
 
 在 ArrayList 中，writeObject 方法被重写了，用于自定义序列化逻辑：只序列化有效数据，因为 elementData 数组的容量一般大于实际的元素数量，声明的时候也加了 transient 关键字。
 
-![二哥的 Java 进阶之路：elementData](https://cdn.paicoding.com/stutymore/collection-20250106155608.png)
+![二哥的 Java 进阶之路：elementData](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_15.png)
 
 #### 为什么 ArrayList 不直接序列化元素数组呢？
 
@@ -290,7 +290,7 @@ Vector 属于 JDK 1.0 时期的遗留类，不推荐使用，仍然保留着是�
 
 ArrayList 是在 JDK 1.2 时引入的，用于替代 Vector 作为主要的非同步动态数组实现。因为 Vector 所有的方法都使用了 synchronized 关键字进行同步，所以单线程环境下效率较低。
 
-![二哥的 Java 进阶之路：Vector源码](https://cdn.paicoding.com/stutymore/collection-20240619110254.png)
+![二哥的 Java 进阶之路：Vector源码](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_16.png)
 
 > 1. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的招商银行面经同学 6 招银网络科技面试原题：线程不安全的集合变成线程安全的方法？
 > 2. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的 比亚迪面经同学2面试原题：ArrayList 和 vector 的区别
@@ -303,7 +303,7 @@ CopyOnWriteArrayList 就是线程安全版本的 ArrayList。
 
 CopyOnWriteArrayList 采用了一种读写分离的并发策略。CopyOnWriteArrayList 容器允许并发读，读操作是无锁的。至于写操作，比如说向容器中添加一个元素，首先将当前容器复制一份，然后在新副本上执行写操作，结束之后再将原容器的引用指向新容器。
 
-![三分恶面渣逆袭：CopyOnWriteArrayList原理](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-7.png)
+![三分恶面渣逆袭：CopyOnWriteArrayList原理](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_17.png)
 
 <MZNXQRcodeBanner />
 
@@ -317,7 +317,7 @@ Map 中最重要的就是 HashMap 了，面试基本被问出包浆了，一定�
 
 JDK 8 中 HashMap 的数据结构是`数组`+`链表`+`红黑树`。
 
-![三分恶面渣逆袭：JDK 8 HashMap 数据结构示意图](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-8.png)
+![三分恶面渣逆袭：JDK 8 HashMap 数据结构示意图](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_18.png)
 
 数组用来存储键值对，每个键值对可以通过索引直接拿到，索引是通过对键的哈希值进行进一步的 `hash()` 处理得到的。
 
@@ -369,7 +369,7 @@ HashMap 的初始容量是 16，随着元素的不断添加，HashMap 就需要�
 4. 红色节点的子节点一定是黑色的；
 5. 从任一节点到其每个叶子的所有简单路径都包含相同数目的黑色节点。
 
-![三分恶面渣逆袭：红黑树](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-9.png)
+![三分恶面渣逆袭：红黑树](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_19.png)
 
 #### 为什么不用二叉树？
 
@@ -392,13 +392,13 @@ HashMap 的初始容量是 16，随着元素的不断添加，HashMap 就需要�
 
 ①、通过左旋和右旋来调整树的结构，避免某一侧过深。
 
-![三分恶面渣逆袭：左旋](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-10.png)
+![三分恶面渣逆袭：左旋](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_20.png)
 
-![三分恶面渣逆袭：右旋](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-11.png)
+![三分恶面渣逆袭：右旋](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_21.png)
 
 ②、染⾊，修复红黑规则，从而保证树的高度不会失衡。
 
-![三分恶面渣逆袭：染色](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-12.png)
+![三分恶面渣逆袭：染色](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_22.png)
 
 > 1. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的携程面经同学 1 Java 后端技术一面面试原题：HashMap 为什么用红黑树，链表转数条件，红黑树插入删除规则
 
@@ -408,7 +408,7 @@ memo：2025 年 1 月 6 日修改到此。
 
 哈希寻址 → 处理哈希冲突（链表还是红黑树）→ 判断是否需要扩容 → 插入/覆盖节点。
 
-![三分恶面渣逆袭：HashMap插入数据流程图](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-13.jpg)
+![三分恶面渣逆袭：HashMap插入数据流程图](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_23.jpg)
 
 详细版：
 
@@ -503,7 +503,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
 
 通过哈希值定位索引 → 定位桶 → 检查第一个节点 → 遍历链表或红黑树查找 → 返回结果。
 
-![三分恶面渣逆袭：HashMap查找流程图](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-14.png)
+![三分恶面渣逆袭：HashMap查找流程图](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_24.png)
 
 ### 13.HashMap 的 hash 函数是怎么设计的?
 
@@ -525,11 +525,11 @@ static final int hash(Object key) {
 
 解释一下。
 
-![二哥的 Java 进阶之路：JDK 8中的 hash 函数](https://cdn.paicoding.com/stutymore/collection-20240325100934.png)
+![二哥的 Java 进阶之路：JDK 8中的 hash 函数](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_25.png)
 
 以初始长度 16 为例，16-1=15。2 进制表示是`0000 0000 0000 0000 0000 0000 0000 1111`。只取最后 4 位相等于哈希值的高位都丢弃了。
 
-![三分恶面渣逆袭：哈希&运算](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-15.png)
+![三分恶面渣逆袭：哈希&运算](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_26.png)
 
 比如说 1111 1111 1111 1111 1111 1111 1111 1111，取最后 4 位，也就是 1111。
 
@@ -539,7 +539,7 @@ static final int hash(Object key) {
 
 这时候 hash 函数 `(h = key.hashCode()) ^ (h >>> 16)` 就派上用场了。
 
-![三分恶面渣逆袭：hash 函数示意图](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-16.jpg)
+![三分恶面渣逆袭：hash 函数示意图](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_27.jpg)
 
 将哈希值无符号右移 16 位，意味着原哈希值的高 16 位被移到了低 16 位的位置。这样，原始哈希值的高 16 位和低 16 位就可以参与到最终用于索引计算的低位中。
 
@@ -684,7 +684,7 @@ ${2^n}$ 的二进制形式为 1，后面跟着 n 个 0，那 ${2^n}$ - 1 的二�
 
 HashMap 会将容量调整到大于等于 17 的最小的 2 的幂次方，也就是 32。
 
-![三分恶面渣逆袭：容量计算](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-18.png)
+![三分恶面渣逆袭：容量计算](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_28.png)
 
 这是因为哈希表的大小最好是 2 的 N 次幂，这样可以通过 `(n - 1) & hash` 高效计算出索引值。
 
@@ -752,7 +752,7 @@ static final int tableSizeFor(int cap) {
 
 ⑤、将`key`分割成位数相同的几段，然后把它们的叠加和作为映射的位置。
 
-![散列函数构造](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-19.png)
+![散列函数构造](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_29.png)
 
 ### 18.解决哈希冲突有哪些方法？
 
@@ -770,7 +770,7 @@ static final int tableSizeFor(int cap) {
 - 二次探测：从冲突的位置 x 开始，第一次增加 $1^2$ 个位置，第二次增加 $2^2$，直到找到空槽。
 - 双重哈希：和再哈希法类似，准备多个哈希函数，发生冲突的时候，使用另外一个哈希函数。
 
-![三分恶面渣逆袭：拉链法 VS 开放地址法](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-20.png)
+![三分恶面渣逆袭：拉链法 VS 开放地址法](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_30.png)
 
 #### 什么是拉链法？
 
@@ -799,7 +799,7 @@ if (e.hash == hash &&
 
 #### 为什么是 8 呢？
 
-![三分恶面渣逆袭：源码注释](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-21.png)
+![三分恶面渣逆袭：源码注释](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_31.png)
 
 和统计学有关。理想情况下，使用随机哈希码，链表里的节点符合泊松分布，出现节点个数的概率是递减的，节点个数为 8 的情况，发生概率仅为 `0.00000006`。
 
@@ -813,7 +813,7 @@ if (e.hash == hash &&
 
 当键值对数量超过阈值，也就是容量 \* 负载因子时。
 
-![二哥的 Java 进阶之路：HashMap 扩容](https://cdn.paicoding.com/stutymore/collection-20240323113620.png)
+![二哥的 Java 进阶之路：HashMap 扩容](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_32.png)
 
 #### 默认的负载因子是多少？
 
@@ -840,7 +840,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16
 这是一个经验值。如果设置得太低，如 0.5，会浪费空间；如果设置得太高，如 0.9，会增加哈希冲突。
 
 
-![二哥的 Java 进阶之路：为什么选择 0.75](https://cdn.paicoding.com/stutymore/collection-20250108101417.png)
+![二哥的 Java 进阶之路：为什么选择 0.75](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_33.png)
 
 0.75 是 JDK 作者经过大量验证后得出的最优解，能够最大限度减少 rehash 的次数。
 
@@ -879,7 +879,7 @@ static int indexFor(int h, int length) {
 
 取模运算后，键发生了哈希冲突，它们都需要放到 `table[1]` 的桶上。那么扩容前就是这个样子：
 
-![二哥的 Java 进阶之路：JDK7 扩容前](https://cdn.paicoding.com/tobebetterjavaer/images/collection/hashmap-resize-01.png)
+![二哥的 Java 进阶之路：JDK7 扩容前](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_34.png)
 
 假设负载因子 loadFactor 为 1，也就是当元素的个数大于 table 的长度时进行扩容。
 
@@ -889,7 +889,7 @@ static int indexFor(int h, int length) {
 - key 7 取模（7%4）后是 3，放在 `table[3]` 上的链表头部。
 - key 5 取模（5%4）后是 1，放在 `table[1]` 上。
 
-![二哥的 Java 进阶之路： JDK7扩容后](https://cdn.paicoding.com/tobebetterjavaer/images/collection/hashmap-resize-02.png)
+![二哥的 Java 进阶之路： JDK7扩容后](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_35.png)
 
 可以看到，由于 JDK 采用的是头插法，7 跑到 3 的前面了，原来的顺序是 3、7、5，7 在 3 的后面。
 
@@ -955,11 +955,11 @@ if (hiHead != null)
 - key1 和 n-1 做 & 运算后为 0000 0101，也就是 5；
 - key2 和 n-1 做 & 运算后为 0001 0101，也就是 21=5+16，就是数组扩容前的位置+原数组的长度。
 
-![三分恶面渣逆袭：扩容位置变化](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-26.png)
+![三分恶面渣逆袭：扩容位置变化](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_36.png)
 
 这样可以避免重新计算所有元素的哈希值，只需检查高位的某一位，就可以快速确定新位置。
 
-![三分恶面渣逆袭：扩容节点迁移示意图](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-27.png)
+![三分恶面渣逆袭：扩容节点迁移示意图](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_37.png)
 
 
 #### 扩容的时候每个节点都要进行位运算吗？
@@ -985,16 +985,16 @@ if (hiHead != null)
 
 ③、扩容的时机由插入时判断改为插入后判断，这样可以避免在每次插入时都进行不必要的扩容检查，因为有可能插入后仍然不需要扩容。
 
-![二哥的 Java 进阶之路：JDK7 JDK8 扩容时机的不同](https://cdn.paicoding.com/stutymore/collection-20250108174154.png)
+![二哥的 Java 进阶之路：JDK7 JDK8 扩容时机的不同](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_38.png)
 
 
 ④、哈希扰动算法也进行了优化。JDK 7 是通过多次移位和异或运算来实现的。
 
-![二哥的 Java 进阶之路：JDK 7 的 hash 方法](https://cdn.paicoding.com/stutymore/collection-20240512093223.png)
+![二哥的 Java 进阶之路：JDK 7 的 hash 方法](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_39.png)
 
 JDK 8 让 hash 值的高 16 位和低 16 位进行了异或运算，让高位的信息也能参与到低位的计算中，这样可以极大程度上减少哈希碰撞。
 
-![二哥的 Java 进阶之路：JDK 8 的 hash 方法](https://cdn.paicoding.com/stutymore/collection-20240512093327.png)
+![二哥的 Java 进阶之路：JDK 8 的 hash 方法](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_40.png)
 
 > 1. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的美团同学 2 优选物流调度技术 2 面面试原题：HashMap 的内部结构，1.7 和 1.8 的区别，有什么改进
 
@@ -1008,11 +1008,11 @@ JDK 8 让 hash 值的高 16 位和低 16 位进行了异或运算，让高位的
 - 第二步，实现一个拉链法的方法来解决哈希冲突
 - 第三步，扩容后，重新计算哈希值，将元素放到新的数组中
 
-![三分恶面渣逆袭：自定义HashMap整体结构](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-29.png)
+![三分恶面渣逆袭：自定义HashMap整体结构](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_41.png)
 
 完整代码：
 
-![完整代码](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-30.png)
+![完整代码](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_42.png)
 
 ### 24.🌟HashMap 是线程安全的吗？
 
@@ -1022,17 +1022,17 @@ HashMap 不是线程安全的，主要有以下几个问题：
 
 ①、多线程下扩容会死循环。JDK7 中的 HashMap 使用的是头插法来处理链表，在多线程环境下扩容会出现环形链表，造成死循环。
 
-![二哥的 Java 进阶之路：环形链表](https://cdn.paicoding.com/tobebetterjavaer/images/collection/hashmap-thread-nosafe-07.png)
+![二哥的 Java 进阶之路：环形链表](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_43.png)
 
 不过，JDK 8 时通过尾插法修复了这个问题，扩容时会保持链表原来的顺序。
 
 ②、多线程在进行 put 元素的时候，可能会导致元素丢失。因为计算出来的位置可能会被其他线程覆盖掉，比如说一个县城 put 3 的时候，另外一个线程 put 了 7，就把 3 给弄丢了。
 
-![二哥的 Java 进阶之路](https://cdn.paicoding.com/tobebetterjavaer/images/collection/hashmap-thread-nosafe-10.png)
+![二哥的 Java 进阶之路](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_44.png)
 
 ③、put 和 get 并发时，可能导致 get 为 null。线程 1 执行 put 时，因为元素个数超出阈值而扩容，线程 2 此时执行 get，就有可能出现这个问题。
 
-![二哥的 Java 进阶之路：get 到 null](https://cdn.paicoding.com/stutymore/collection-20240326085630.png)
+![二哥的 Java 进阶之路：get 到 null](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_45.png)
 
 因为线程 1 执行完 table = newTab 之后，线程 2 中的 table 已经发生了改变，比如说索引 3 的键值对移动到了索引 7 的位置，此时线程 2 去 get 索引 3 的元素就 get 不到了。
 
@@ -1049,15 +1049,15 @@ HashMap 不是线程安全的，主要有以下几个问题：
 
 在早期的 JDK 版本中，可以用 Hashtable 来保证线程安全。Hashtable 在方法上加了 [synchronized 关键字](https://javabetter.cn/thread/synchronized-1.html)。
 
-![二哥的 Java 进阶之路：Hashtable](https://cdn.paicoding.com/stutymore/collection-20240323125211.png)
+![二哥的 Java 进阶之路：Hashtable](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_46.png)
 
 另外，可以通过 `Collections.synchronizedMap` 方法返回一个线程安全的 Map，内部是通过 synchronized 对象锁来保证线程安全的，比在方法上直接加 synchronized 关键字更轻量级。
 
-![二哥的 Java 进阶之路：Collections.synchronizedMap](https://cdn.paicoding.com/stutymore/collection-20240323125418.png)
+![二哥的 Java 进阶之路：Collections.synchronizedMap](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_47.png)
 
 更优雅的解决方案是使用并发工具包下的 [ConcurrentHashMap](https://javabetter.cn/thread/ConcurrentHashMap.html)，使用了[CAS](https://javabetter.cn/thread/cas.html)+ [synchronized 关键字](https://javabetter.cn/thread/synchronized-1.html)来保证线程安全。
 
-![初念初恋：ConcurrentHashMap 8 中的实现](https://cdn.paicoding.com/stutymore/map-20230816155924.png)
+![初念初恋：ConcurrentHashMap 8 中的实现](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_48.png)
 
 
 > 1. [Java 面试指南（付费）](https://javabetter.cn/zhishixingqiu/mianshi.html)收录的小米春招同学 K 一面面试原题：有哪些线程安全的 map，ConcurrentHashMap 怎么保证线程安全的，为什么比 hashTable 效率好
@@ -1079,21 +1079,21 @@ HashMap 不是线程安全的，主要有以下几个问题：
 
 LinkedHashMap 在 HashMap 的基础上维护了一个双向链表，通过 before 和 after 标识前置节点和后置节点。
 
-![三分恶面渣逆袭：Entry节点](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-33.png)
+![三分恶面渣逆袭：Entry节点](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_49.png)
 
 从而实现插入的顺序或访问顺序。
 
-![三分恶面渣逆袭：LinkedHashMap实现原理](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-34.png)
+![三分恶面渣逆袭：LinkedHashMap实现原理](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_50.png)
 
 ### 28.讲讲 TreeMap 怎么实现有序的？
 
 TreeMap 通过 key 的比较器来决定元素的顺序，如果没有指定比较器，那么 key 必须实现 [Comparable 接口](https://javabetter.cn/collection/comparable-omparator.html)。
 
-![二哥的 Java 进阶之路：TreeMap源码](https://cdn.paicoding.com/stutymore/collection-20240330124711.png)
+![二哥的 Java 进阶之路：TreeMap源码](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_51.png)
 
 TreeMap 的底层是红黑树，红黑树是一种自平衡的二叉查找树，每个节点都大于其左子树中的任何节点，小于其右子节点树种的任何节点。
 
-![三分恶面渣逆袭：TreeMap](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-35.png)
+![三分恶面渣逆袭：TreeMap](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_52.png)
 
 插入或者删除元素时通过旋转和染色来保持树的平衡。
 
@@ -1156,7 +1156,7 @@ for (String s : set) {
 
 HashSet 会自动去重，因为它是用 HashMap 实现的，HashMap 的键是唯一的，相同键会覆盖掉原来的键，于是第二次 add 一个相同键的元素会直接覆盖掉第一次的键。
 
-![三分恶面渣逆袭：HashSet套娃](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-36.png)
+![三分恶面渣逆袭：HashSet套娃](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_53.png)
 
 #### HashSet 和 ArrayList 的区别
 
@@ -1176,7 +1176,7 @@ public boolean add(E e) {
 
 所以 HashSet 判断元素重复的逻辑底层依然是 HashMap 的底层逻辑：
 
-![三分恶面渣逆袭：HashMap插入数据流程图](https://cdn.paicoding.com/tobebetterjavaer/images/sidebar/sanfene/collection-13.jpg)
+![三分恶面渣逆袭：HashMap插入数据流程图](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/collection/img_23.jpg)
 
 HashMap 在插入元素时，通常需要三步：
 
