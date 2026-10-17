@@ -28,7 +28,7 @@ pnpm create fuwari@latest
 5. 是否安装依赖（推荐安装）
 6. 是否初始化Git（推荐安装）
 
-![初始化项目](./init.png)
+![初始化项目](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/blog/init.png)
 
 ## 二、本地运行启动
 
@@ -120,7 +120,7 @@ jobs:
 
 2. 登录github打开对应仓库
 - Setting->Pages->Build and deployment->soure选择Github Actions
-![GitHub设置](./img_1.png)
+![GitHub设置](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/blog/img_1.png)
 
 3. 提交并推送代码自动部署页面
 
