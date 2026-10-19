@@ -25,7 +25,7 @@ Java 是一门面向对象的编程语言，由 Sun 公司的詹姆斯·高斯�
 
 后面又做了微服务项目 [pmhub](https://javabetter.cn/zhishixingqiu/pmhub.html)，接触到了 Spring Cloud、Nacos、Sentinel、Seata、SkyWalking 等相关技术栈。
 
-![pmhub](https://cdn.paicoding.com/stutymore/1719412227941-391d1ca0-e312-4e81-a958-2eff29dbecd7.png)
+![pmhub](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/javase/img_60.png)
 
 #### Java 语言和 C 语言有哪些区别？
 
@@ -39,7 +39,7 @@ Java 实现了内存的自动管理，而 C 语言需要使用 malloc 和 free �
 
 因为它可以做的事情太多了，既可以用它来写 Web 后端服务，也可以用它来造一些轮子，比如 [MYDB](https://t.zsxq.com/0bhcI0Gs6) 这个轮子，就是用 Java 完成的，不进加深了我对 MySQL索引、事务、MVCC 的理解，还让我对 Java 的 NIO、多线程、JVM 有了更深的了解。
 
-![MYDB](https://cdn.paicoding.com/stutymore/javase-20241223085416.png)
+![MYDB](https://raw.githubusercontent.com/0ZAWSZE0/resource/main/inklog-astro/posts/javase/img_61.png)
 
 #### 平时是怎么学 Java 的？
 
