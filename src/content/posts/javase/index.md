@@ -7,12 +7,49 @@ tags: ["Java", "面试", "八股文"]
 category: 面试
 draft: false
 ---
+## Java 概述
+
+### 1.🌟什么是 Java？
+
+Java 是一门面向对象的编程语言，由 Sun 公司的詹姆斯·高斯林团队于 1995 年推出。吸收了 C++ 语言中大量的优点，但又抛弃了 C++ 中容易出错的地方，如垃圾回收、指针。
+
+同时，Java 又是一门平台无关的编程语言，即一次编译，处处运行。
+
+只需要在对应的平台上安装 JDK，就可以实现跨平台，在 Windows、macOS、Linux 操作系统上运行。
+
+#### 多久开始学 Java 的？
+
+我是从大一下学期开始学习 Java 的，当时已经学完了 C 语言，但苦于 C 语言没有很好的应用方向，就开始学习 Java 了，因为我了解到，绝大多数的互联网公司，包括银行、国企，后端服务都是用 Java 开发的，另外就是，Java 的学习资料非常丰富，就业岗位和薪资待遇都比较理想。
+
+于是就一边学，一边实战，先做了前后端分离的社区项目[技术派](https://javabetter.cn/zhishixingqiu/paicoding.html)，接触到了 Spring Boot、MyBatis-Plus、MySQL、Redis、ElasticSearch、MongoDB、Docker、RabbitMQ 等一系列的 Java 技术栈。
+
+后面又做了微服务项目 [pmhub](https://javabetter.cn/zhishixingqiu/pmhub.html)，接触到了 Spring Cloud、Nacos、Sentinel、Seata、SkyWalking 等相关技术栈。
+
+![pmhub](https://cdn.paicoding.com/stutymore/1719412227941-391d1ca0-e312-4e81-a958-2eff29dbecd7.png)
 
 #### Java 语言和 C 语言有哪些区别？
 
 Java 是一种跨平台的编程语言，通过在不同操作系统上安装对应版本的 JVM 以实现“一次编译，处处运行”的目的。而 C 语言需要在不同的操作系统上重新编译。
 
 Java 实现了内存的自动管理，而 C 语言需要使用 malloc 和 free 来手动管理内存。
+
+#### 平常用什么编程语言？
+
+大一上先学习的 C 语言，大一下半学期开始学习 Java，中间还学过一些 Python 和 JavaScript，但整体的感受上来说还是更喜欢 Java。
+
+因为它可以做的事情太多了，既可以用它来写 Web 后端服务，也可以用它来造一些轮子，比如 [MYDB](https://t.zsxq.com/0bhcI0Gs6) 这个轮子，就是用 Java 完成的，不进加深了我对 MySQL索引、事务、MVCC 的理解，还让我对 Java 的 NIO、多线程、JVM 有了更深的了解。
+
+![MYDB](https://cdn.paicoding.com/stutymore/javase-20241223085416.png)
+
+#### 平时是怎么学 Java 的？
+
+一开始，主要是跟着学校的课程走，入门后感觉课程已经满足不了我的求知欲了，于是就开始在 B 站和 GitHub 上找一些优质的视频资源和开源知识库来学习。
+
+比如说《[Java 进阶之路](https://github.com/itwanger/toBeBetterJavaer)》就很适合我的口味，从 Java 的语法、数组&字符串、OOP、集合框架、Java IO、异常处理、网络编程、NIO、并发编程、JVM 等，都有详细的讲解，还有很多手绘图和代码实例，我都跟着动手一步步实现了，感觉收获很大。
+
+后来又读了一遍《Java 编程思想》、《Effective Java》，周志明老师的《深入理解 Java 虚拟机》，以及 JDK 的一些源码，比如说 String、HashMap，还有字节码方面的知识。
+
+再后来就开始做实战项目 [MYDB](https://t.zsxq.com/0bhcI0Gs6)、[技术派](https://javabetter.cn/zhishixingqiu/paicoding.html)、[PmHub](https://javabetter.cn/zhishixingqiu/pmhub.html)，算是彻底掌握 Java 项目的开发流程了。
 
 ### 2.Java 语言有哪些特点？
 
