@@ -31,3 +31,7 @@ yarn.lock
 *.iml
 /.archify/
 /.vscode/
+
+#npm
+.npm-cache
+.pnpm-store
