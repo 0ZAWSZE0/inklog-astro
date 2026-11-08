@@ -11,6 +11,10 @@ import {
 import { onMount } from "svelte";
 import type { LIGHT_DARK_MODE } from "@/types/config.ts";
 
+// Workaround for @astrojs/svelte typing: runes components without props are typed as
+// `Record<string, never>`, which makes `client:only` fail `astro check`.
+const _props: Record<string, unknown> = $props();
+
 const seq: LIGHT_DARK_MODE[] = [LIGHT_MODE, DARK_MODE, AUTO_MODE];
 let mode: LIGHT_DARK_MODE = $state(AUTO_MODE);
 
