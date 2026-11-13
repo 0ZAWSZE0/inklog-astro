@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "check": "astro check",
+    "test": "vitest run",
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
@@ -70,7 +71,8 @@
     "@types/mdast": "^4.0.4",
     "@types/sanitize-html": "^2.16.0",
     "postcss-import": "^16.1.1",
-    "postcss-nesting": "^13.0.2"
+    "postcss-nesting": "^13.0.2",
+    "vitest": "^4.1.12"
   },
   "packageManager": "pnpm@9.14.4"
 }
